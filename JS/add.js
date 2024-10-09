@@ -4,7 +4,7 @@ const cartWrapper = document.querySelector('.cart-wrapper');
 // Отслеживаем клик на странице
 window.addEventListener('click', function (event) {
 	// Проверяем что клик был совершен по кнопке "Добавить в корзину"
-	if (event.target.hasAttribute('data-cart')) {
+	if (event.target.classList.contains('section__button')) {
 
 		// Находим карточку с товаром, внутри котрой был совершен клик
 		const card = event.target.closest('.card');
@@ -22,50 +22,54 @@ window.addEventListener('click', function (event) {
 		};
 
 		// Проверять если ли уже такой товар в корзине
+		const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"] `);
 
+		if (itemInCart) {
+			const counterElement = itemInCart.querySelector('[data-counter]');
+			counterElement.innerText = parseInt(counterElement.innerText) + parseInt(productInfo.counter);
+		} else {
 
-		// Если товар есть в корзине
-
-		// Если товара нет в корзине
-
-		// Собранные данные подставим в шаблон для товара в корзине
-		const cartItemHTML = `<div class="card" data-id="${productInfo.id}">
+			// Собранные данные подставим в шаблон для товара в корзине
+			const cartItemHTML = `<div class="card__new" data-id="${productInfo.id}">
 						<div class="card__item" ">
-							<img class=" product-img" src="${productInfo.imgSrc}" alt="">
+							<img class=" product-png" src="${productInfo.imgSrc}" alt="">
 							
-						<h3 class="card__name">${productInfo.title}</h3>
-						<div class="description__block">
+						<h3 class="card__name-cat">${productInfo.title}</h3>
+						<div class="description__block-cat">
 							<div class="before">${productInfo.itemsInBox}</div>
 							<div class="flex-col">
-								<div class="black">${productInfo.itemsInBos}</div>
+								<div class="black-cat">${productInfo.itemsInBos}</div>
 								<div>Возраст</div>
 							</div>
 						</div>
 						<div class="details">
-							<div class="things">${productInfo.weight}</div>
+							<div class="things-cat">${productInfo.weight}</div>
 
-							<div class="counter-wrapper">
+							<div class="counter-wrapper_cat">
 								<div class="items__control" data-action="minus">-</div>
 								<div class="items__current" data-counter>${productInfo.counter}</div>
 								<div class="items__control" data-action="plus">+</div>
 							</div>
 							<div class="price">
-								<div class="price__currency">${productInfo.price} </div>
+								<div class="price__currency-cat">${productInfo.price} </div>
 							</div>
 						</div>
 					
 					</div>`;
 
-		// Отобразим товар в корзине
-		cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+			// Отобразим товар в корзине
+			cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
 
 
-		// Сбрасываем счетчик добавленного товара на "1"
-		card.querySelector('[data-counter]').innerText = '1';
+			// Сбрасываем счетчик добавленного товара на "1"
+			// card.querySelector('[data-counter]').innerText = '1';
 
-		// toggleCartStatus();
-		// calcCartPriceAndDelivery()
+			// toggleCartStatus();
+			// calcCartPriceAndDelivery()
 
+		}
 	}
 });
+
+
 
