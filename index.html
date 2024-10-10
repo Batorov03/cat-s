@@ -95,7 +95,7 @@
 							</div>
 						</div>
 						<div class="details">
-							<div class="things">Кол-во:</div>
+							<div class="things">шт:</div>
 
 							<div class="counter-wrapper">
 								<div class="items__control" data-action="minus">-</div>
@@ -140,12 +140,8 @@
 					</div>
 
 					<div class="card" data-id="03">
-						<div class="card__item" ">
+						<div class="card__item">
 							<img class=" product-img" src="./images/kot-3.png" alt="">
-							<!-- <div class="discount__absolute">-40%</div>
-								<div class="like">
-									<img src="images/like%201.png" alt="">
-								</div> -->
 						</div>
 						<h3 class="card__name">Кот полосатый</h3>
 						<div class="description__block">
@@ -176,6 +172,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">Ваш заказ</h4>
+								<hr>
 								<div data-cart-empty class="alert alert-secondary" role="alert">
 									Корзина пуста
 								</div>
@@ -191,8 +188,9 @@
 								<div class="cart-total">
 									<p data-cart-delivery class="none">
 										<span class="h5">Доставка:</span> <span class="delivery-cost "></span>
-										<hr />
-										<span class="small">Бесплатно при заказе от 600р</span>
+										<span class="small">Бесплатно
+											при заказе от 600р
+										</span>
 										<hr />
 									</p>
 									<p><span class="h5">Итого:</span> <span class="total-price">0</span> <span class="rouble">₽</span>
@@ -203,7 +201,7 @@
 						</div>
 
 						<!-- Оформить заказ -->
-						<div id="order-form" class="card-body border-top">
+						<div id="order-form" class="card-body border-top none">
 							<h5 class="card-title">Оформить заказ</h4>
 								<form>
 									<div class="form-group">
@@ -266,6 +264,7 @@
 	</footer>
 	<script src="./JS/counter.js"></script>
 	<script src="./JS/add.js"></script>
+	<script src="./JS/toggle.js"></script>
 </body>
 
 </html>

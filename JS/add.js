@@ -30,45 +30,44 @@ window.addEventListener('click', function (event) {
 		} else {
 
 			// Собранные данные подставим в шаблон для товара в корзине
-			const cartItemHTML = `<div class="card__new" data-id="${productInfo.id}">
-						<div class="card__item" ">
-							<img class=" product-png" src="${productInfo.imgSrc}" alt="">
-							
-						<h3 class="card__name-cat">${productInfo.title}</h3>
-						<div class="description__block-cat">
-							<div class="before">${productInfo.itemsInBox}</div>
-							<div class="flex-col">
-								<div class="black-cat">${productInfo.itemsInBos}</div>
-								<div>Возраст</div>
-							</div>
-						</div>
-						<div class="details">
-							<div class="things-cat">${productInfo.weight}</div>
+			const cartItemHTML =
+				`<div class="card__new" data-id="${productInfo.id}">
+						<div class="card__item-cat" ">
 
-							<div class="counter-wrapper_cat">
-								<div class="items__control" data-action="minus">-</div>
-								<div class="items__current" data-counter>${productInfo.counter}</div>
-								<div class="items__control" data-action="plus">+</div>
-							</div>
-							<div class="price">
-								<div class="price__currency-cat">${productInfo.price} </div>
-							</div>
+							   <img class=" product-png" src="${productInfo.imgSrc}" alt="">
+								 <div class="d">
+								   <h3 class="card__name-cat">${productInfo.title}</h3>
+									 <div class="details__cat">
+									 
+						     	   <div class="things-cat">${productInfo.weight}</div>
+							       <div class="counter-wrapper_cat">
+								       <div class="items__control" data-action="minus">-</div>
+								       <div class="items__current" data-counter>${productInfo.counter}</div>
+								       <div class="items__control" data-action="plus">+</div>
+							       </div>
+						      	<div class="price">
+								      <div class="price__currency-cat">${productInfo.price} </div>
+							    </div>
+									</div>
 						</div>
-					
-					</div>`;
+					</div>
+					<hr>`;
 
 			// Отобразим товар в корзине
 			cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
-
-
-			// Сбрасываем счетчик добавленного товара на "1"
-			// card.querySelector('[data-counter]').innerText = '1';
-
-			// toggleCartStatus();
-			// calcCartPriceAndDelivery()
-
 		}
+
+
+		// Сбрасываем счетчик добавленного товара на "1"
+		card.querySelector('[data-counter]').innerText = '1';
+
+		// calcCartPriceAndDelivery()
+		toggleCartStatus();
+
+
+
 	}
+
 });
 
 
