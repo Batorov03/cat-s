@@ -14,7 +14,6 @@ window.addEventListener('click', function (event) {
 			id: card.dataset.id,
 			imgSrc: card.querySelector('.product-img').getAttribute('src'),
 			title: card.querySelector('.card__name').innerText,
-			itemsInBox: card.querySelector('.before').innerText,
 			itemsInBos: card.querySelector('.black').innerText,
 			weight: card.querySelector('.things').innerText,
 			price: card.querySelector('.price__currency').innerText,

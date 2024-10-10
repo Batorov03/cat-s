@@ -1,0 +1,84 @@
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0px;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, .125);
+	border-radius: .25rem;
+}
+
+.card__name {
+	color: #000;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin: 29px 0px 22px 29px;
+}
+
+.description__block {
+	display: flex;
+	gap: 18px;
+
+}
+
+.cash {
+	margin-top: 16px;
+	/* margin-bottom: 30px; */
+	margin-left: 30px;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+
+}
+
+.details {
+	display: flex;
+	align-items: center;
+	/* text-align: center; */
+	justify-content: space-between;
+	margin: 30px 10px;
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.counter-wrapper {
+	display: flex;
+	border-radius: 10px;
+	/* justify-content: space-between; */
+	/* padding-left: 20px; */
+
+}
+
+.items__control {
+	cursor: pointer;
+}
+
+.items__current {
+	padding: 0 10px;
+}
+
+.none {
+	display: none;
+}
+
+.section__button {
+	width: 100%;
+	height: 65px;
+	flex-shrink: 0;
+	color: #FFF;
+	text-align: center;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	background: #6EBBD3;
+	transition: 0.3s background;
+}
+
+.section__button:hover {
+	background: black;
+}
