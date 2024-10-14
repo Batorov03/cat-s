@@ -18,6 +18,7 @@ window.addEventListener('click', function (event) {
 			weight: card.querySelector('.things').innerText,
 			price: card.querySelector('.price__currency').innerText,
 			counter: card.querySelector('[data-counter]').innerText,
+
 		};
 
 		// Проверять если ли уже такой товар в корзине
@@ -39,13 +40,13 @@ window.addEventListener('click', function (event) {
 									 <div class="details__cat">
 									 
 						     	   <div class="things-cat">${productInfo.weight}</div>
-							       <div class="counter-wrapper_cat">
+							       <div class="counter-wrapper">
 								       <div class="items__control" data-action="minus">-</div>
 								       <div class="items__current" data-counter>${productInfo.counter}</div>
 								       <div class="items__control" data-action="plus">+</div>
 							       </div>
 						      	<div class="price">
-								      <div class="price__currency-cat">${productInfo.price} </div>
+								      <div class="price__currency">${productInfo.price} </div>
 							    </div>
 									</div>
 						</div>
@@ -54,18 +55,20 @@ window.addEventListener('click', function (event) {
 
 			// Отобразим товар в корзине
 			cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+
 		}
 
 
 		// Сбрасываем счетчик добавленного товара на "1"
 		card.querySelector('[data-counter]').innerText = '1';
 
-		// calcCartPriceAndDelivery()
+		calcCartPriceAndDelivery();
 		toggleCartStatus();
 
 
 
 	}
+
 
 });
 
